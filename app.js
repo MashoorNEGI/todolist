@@ -33,11 +33,11 @@ const item2 = new Item({
 const item3 = new Item({
   name: "<--- Hit this to delete an item"
 })
-const defaultItem = [ item1, item2, item3 ]
+const defaultItem = [item1, item2, item3]
 
 const listSchema = {
   name: String,
-  items: [ itemsechma ]
+  items: [itemsechma]
 }
 
 const List = mongoose.model("list", listSchema)
@@ -82,11 +82,11 @@ app.get("/", function (req, res) {
 
 });
 
-app.post("/custom", function (req, res) {
-  const custom = req.body.customlist
-  // console.log(custom)
-  res.redirect("/" + custom)
-})
+  app.post("/custom", function (req, res) {
+    const custom = req.body.customlist
+    // console.log(custom)
+    res.redirect("/"+custom)
+  })
 
 
 app.get("/:customListName", function (req, res) {
